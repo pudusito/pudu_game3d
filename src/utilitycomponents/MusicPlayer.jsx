@@ -31,8 +31,8 @@ export default function MusicPlayer() {
     return (
       <div style={{
         position: 'fixed',
-        top: '20px',
-        right: '4%',
+        bottom: '1rem',
+        right: '1rem',
         zIndex: 1000
       }}>
         <button 

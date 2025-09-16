@@ -39,11 +39,12 @@ export default function CanvasFiber() {
               onClick={() => setFollowing((f) => !f)}
               style={{
                 position: "fixed",
-                top: "20px",
-                right: "1%",
+                top: "1rem",
+                right: "1rem",
                 zIndex: 1000,
-                width: "50px",
-                height: "40px",
+                width: window.innerWidth < 768 ? "40px" : "60px",
+                height: window.innerWidth < 768 ? "35px" : "45px",
+                fontSize: window.innerWidth < 768 ? "0.7rem" : "1rem",
                 borderRadius: "50%",
                 background: following ? "#0b8" : "#ff0000",
                 border: "none",
@@ -73,11 +74,12 @@ export default function CanvasFiber() {
           <button onClick={() => setGameState("start")}
                 style={{
                 position: "fixed",
-                top: "20px",
-                right: "7%",
+                top: "1rem",
+                left: "1rem",
                 zIndex: 1000,
-                width: "60px",
-                height: "40px",
+                width: window.innerWidth < 768 ? "55px" : "70px",
+                height: window.innerWidth < 768 ? "35px" : "45px",
+                fontSize: window.innerWidth < 768 ? "0.75rem" : "1rem",
                 borderRadius: "50%",
                 background: "#0b8",
                 border: "none",
@@ -87,15 +89,17 @@ export default function CanvasFiber() {
                 fontWeight: "bold" }}>
             Exit game
           </button>
-          <h1                 style={{
+          <h1  style={{
                 position: "fixed",
                 top: "0%",
                 right: "25%",
                 zIndex: 1000,
-                width: "50%",
+                fontSize: window.innerWidth < 768 ? "1rem" : "2rem",
+                width: "50%", // más ancho en móvil
+                textAlign: "center",
                 height: "10%",
                 color: "#ff000081",
-                fontSize: "2rem",
+      
                 fontWeight: "bold" }}>press R to restart</h1>
         </div>
       )}
@@ -109,7 +113,7 @@ export default function CanvasFiber() {
           {/*Iluminacion de la escena*/}
           <ambientLight intensity={0.5} />
           <directionalLight position={[-25, 10, 100]} />
-          <Stats/>
+      {/*     <Stats/> */}
 
           {/** controladores de depuracion de camara, desactivados por defecto **/}
           {/* <CameraDebugger/> */} {/* esto para ver la posicion de camara en consola*/} 
